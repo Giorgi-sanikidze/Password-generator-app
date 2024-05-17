@@ -60,13 +60,13 @@ function App() {
 
 
   return (
-    <div className='container md:min-h-screen md:min-w-full min-h-screen flex flex-col justify-center items-center bg-VeryDarkGrey text-white px-4 py-16 gap-4'>
-      <span className='title md:text-2xl text-Grey text-base' >Password Generator</span>
-      <div className='display md:py-5 md:px-8 flex justify-between items-center bg-DarkGrey p-4 w-full'>
-        <div className='screen md:text-lg text-AlmostWhite text-base' style={{opacity: opacity}}>{password}</div>
-        <div className='copy flex items-center gap-3.5'>
-          <span className='copy-text hidden md:text-2xl' style={{ display: copyPassword}}>COPIED</span>
-          <svg className='copy-svg fill-NeonGreen hover:fill-white'
+    <div className=' md:min-h-screen md:min-w-full min-h-screen flex flex-col justify-center items-center bg-VeryDarkGrey text-white px-4 py-16 gap-4'>
+      <span className='md:text-2xl text-Grey text-base' >Password Generator</span>
+      <div className='md:py-5 md:px-8 md:w-540px flex justify-between items-center bg-DarkGrey p-4 w-full'>
+        <div className='md:text-lg text-AlmostWhite text-base' style={{opacity: opacity}}>{password}</div>
+        <div className='flex items-center gap-3.5'>
+          <span className='hidden md:text-18px text-NeonGreen' style={{ display: copyPassword}}>COPIED</span>
+          <svg className='fill-NeonGreen hover:fill-white cursor-pointer'
             onClick={() => {
               navigator.clipboard.writeText(password);
               setCopyPassword('flex')
@@ -79,13 +79,13 @@ function App() {
         </div>
       </div>
 
-      <div className='generator md:p-8 md:mt-8 bg-DarkGrey flex flex-col w-full p-4'>
-        <div className='charLength flex items-center justify-between mb-4'>
-          <h2 className='char md:text-lg text-base text-AlmostWhite'>Character Length</h2>
-          <h2 className='length text-2xl text-NeonGreen'>{charLength}</h2>
+      <div className='md:w-540px md:p-8 bg-DarkGrey flex flex-col w-full p-4'>
+        <div className='flex items-center justify-between mb-4'>
+          <h2 className='md:text-lg text-base text-AlmostWhite'>Character Length</h2>
+          <h2 className='text-2xl md:text-32px text-NeonGreen'>{charLength}</h2>
         </div>
-        <div className='input-range w-full h-2 bg-VeryDarkGrey mt-4 rounded-none'>
-          <div className='input-second-color relative bg-NeonGreen h-2 z-10' style={{ width: `${charLength * 4.8}%` }}></div>
+        <div className='w-full h-2 bg-VeryDarkGrey mt-4 rounded-none'>
+          <div className='relative bg-NeonGreen h-2 z-10' style={{ width: `${charLength * 4.8}%` }}></div>
           <input className='range w-full h-0.5 bg-VeryDarkGrey appearance-none relative' type='range' min='0' max='20' step='1'
             value={charLength}
             onChange={e => setCharLength(e.target.value)} />
@@ -94,41 +94,41 @@ function App() {
           <div className='check flex gap-5'>
             <input onChange={() => {
               setUpper(!upper)
-            }} type='checkbox' value='uppercase-letters' className='w-5 h-5'></input>
-            <label htmlFor='uppercase-letters' className='text-AlmostWhite text-base'>Include Uppercase Letters</label>
+            }} type='checkbox' value='uppercase-letters' className='w-5 h-5 cursor-pointer'></input>
+            <label htmlFor='uppercase-letters' className='text-AlmostWhite text-16px md:text-18px'>Include Uppercase Letters</label>
           </div>
 
           <div className='check flex gap-5'>
             <input onChange={() => {
               setLower(!lower)
-            }} type='checkbox' value='lower-letters' className='w-5 h-5'></input>
-            <label htmlFor='lower-letters' className='text-AlmostWhite text-base'>Include Lowercase Letters</label>
+            }} type='checkbox' value='lower-letters' className='w-5 h-5 cursor-pointer'></input>
+            <label htmlFor='lower-letters' className='text-AlmostWhite text-16px md:text-18px'>Include Lowercase Letters</label>
           </div>
 
           <div className='check flex gap-5'>
             <input onChange={() => {
               setNumber(!number)
-            }} type='checkbox' value='include-numbers' className='w-5 h-5'></input>
-            <label htmlFor='include-numbers' className='text-AlmostWhite text-base'>Include Numbers</label>
+            }} type='checkbox' value='include-numbers' className='w-5 h-5 cursor-pointer'></input>
+            <label htmlFor='include-numbers' className='text-AlmostWhite text-16px md:text-18px'>Include Numbers</label>
           </div>
 
           <div className='check flex gap-5'>
             <input onChange={() => {
               setSymbol(!symbol)
-            }} type='checkbox' value='include-symbols' className='w-5 h-5'></input>
-            <label htmlFor='include-symbols' className='text-AlmostWhite text-base'>Include Symbols</label>
+            }} type='checkbox' value='include-symbols' className='w-5 h-5 cursor-pointer'></input>
+            <label htmlFor='include-symbols' className='text-AlmostWhite text-16px md:text-18px'>Include Symbols</label>
           </div>
         </div>
 
-        <div className='strength flex justify-between p-3 bg-VeryDarkGrey' >
-          <h2 className='strength-text text-base text-Grey self-center'>STRENGTH</h2>
-          <div className='strength-show flex gap-4 min-h-8'>
-            <h2 className='strength-type md:text-2xl' >{strength}</h2>
-            <div className='boxes flex gap-2'>
-              <div className='box bg-transparent h-full border-2 border-solid border-AlmostWhite' style={{ background: backgroud1 }}></div>
-              <div className='box bg-transparent h-full border-2 border-solid border-AlmostWhite' style={{ background: backgroud2 }}></div>
-              <div className='box bg-transparent h-full border-2 border-solid border-AlmostWhite' style={{ background: backgroud3 }}></div>
-              <div className='box bg-transparent h-full border-2 border-solid border-AlmostWhite' style={{ background: backgroud4 }}></div>
+        <div className='flex justify-between p-3 bg-VeryDarkGrey' >
+          <h2 className='text-base text-Grey self-center'>STRENGTH</h2>
+          <div className='flex gap-4 min-h-8'>
+            <h2 className='text-lg md:text-2xl flex items-center' >{strength}</h2>
+            <div className='flex gap-2'>
+              <div className='w-10px bg-transparent h-full border-2 border-solid border-AlmostWhite' style={{ background: backgroud1 }}></div>
+              <div className='w-10px bg-transparent h-full border-2 border-solid border-AlmostWhite' style={{ background: backgroud2 }}></div>
+              <div className='w-10px bg-transparent h-full border-2 border-solid border-AlmostWhite' style={{ background: backgroud3 }}></div>
+              <div className='w-10px bg-transparent h-full border-2 border-solid border-AlmostWhite' style={{ background: backgroud4 }}></div>
             </div>
           
           </div>
@@ -174,9 +174,9 @@ function App() {
            
           }
 
-          }} className='generate flex items-center justify-center hover:bg-transparent hover:text-NeonGreen hover:border-2 hover:border-solid hover:border-NeonGreen text-VeryDarkGrey bg-NeonGreen h-14 mt-4 gap-5' type='button'>
+          }} className='md:text-18px text-16px flex items-center justify-center hover:bg-transparent hover:text-NeonGreen hover:border-2 hover:border-solid hover:border-NeonGreen text-VeryDarkGrey bg-NeonGreen h-14 mt-4 gap-3' type='button'>
           GENERATE
-          <svg style={{fill: arrowColor}} className='arrow' width='11px' height='12px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <svg style={{fill: arrowColor}} width='18px' height='15px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
           </svg>
         </button>

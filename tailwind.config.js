@@ -14,6 +14,16 @@ module.exports = {
         "Yellow": '#F8CD65',
         'Orange': 'FB7C58',
         'Red': 'F64A4A'
+      },
+      fontSize: {
+        '32px': '32px',
+        '18px': '18px',
+        '16px': '16px',
+        '30px': '30px'
+      },
+      width: {
+        '540px': '540px',
+        '10px': '10px',
       }
     },
   },

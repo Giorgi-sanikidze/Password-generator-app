@@ -17,38 +17,14 @@
 }
 
 .range::-webkit-slider-thumb {
-    @apply relative h-7 w-7 rounded-full bg-AlmostWhite cursor-pointer;
+    @apply relative h-7 w-7 rounded-full bg-AlmostWhite cursor-pointer hover:bg-black hover:border-2 hover:border-NeonGreen hover:border-solid;
     -webkit-appearance: none;
-    z-index: 2;
-}
-
-
-.box{
-    width: 10px;
+    z-index: 10;
 }
 
 
 
 
 
-@media (min-width: 768px) {
-    .display{
-        width: 540px;
-    }
-    .generator{
-        width: 540px;
-    }
-    .length{
-        font-size: 32px;
-    }
-    .check label{
-        font-size: 18px;
-    }
-    .strength-text{
-        font-size: 18px;
-    }
-    .generate{
-        font-size: 18px;
-    }
 
-}
+
